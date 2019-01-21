@@ -5,8 +5,19 @@
   <title>{{ page.title }}</title>
   <meta name="author" content="Geoffrey Viola" />
   <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/js/highlight/styles/default.css">
+  <script src="/assets/js/highlight/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 </head>
 
 <div class="site">
+  <div class="title">Geoffrey Viola's Blog</div>
+  <div class="subtitle">{{ page.title }}</div>
   {{ content }}
 </div>
+
+<footer>
+  <br />
+  <br />
+  <br />
+</footer>

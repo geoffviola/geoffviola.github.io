@@ -2,5 +2,8 @@
 layout: default
 ---
 <div id="post">
+<div id="date">
+{{ page.date | date_to_string }}
+</div>
 {{ content }}
 </div>

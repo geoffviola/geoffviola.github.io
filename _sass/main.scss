@@ -1,6 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+.title {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 200%;
+  font-weight: normal;
+  margin-bottom: 0.2em;
+  text-align: left;
+}
+
+.subtitle {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 120%;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  text-align: left;
+}
+
+p {
+  margin: 1em 0;
+}
+
 ul.posts {
   list-style-type: none;
   margin-bottom: 2em;
+  text-align: left
 }
 
 ul.posts li {
@@ -11,4 +41,22 @@ ul.posts span {
   color: #aaa;
   font-family: Monaco, "Courier New", monospace;
   font-size: 80%;
+}
+
+#date {
+  color: #aaa;
+  font-family: Monaco, "Courier New", monospace;
+  font-size: 80%;
+  margin-bottom: 2em;
+}
+
+#post img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.site {
+  margin: 2em auto 2em auto;
+  width: 42em;
 }
