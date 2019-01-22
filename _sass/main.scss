@@ -15,6 +15,14 @@ html, body {
   text-align: left;
 }
 
+.title a {
+  text-decoration: none;
+}
+
+.title a:link, .title a:visited, .title a:hover, .title a:active {
+  color: black
+}
+
 .subtitle {
   font-family: "Times New Roman", Times, serif;
   font-size: 120%;

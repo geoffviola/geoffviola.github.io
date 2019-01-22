@@ -1,0 +1,3 @@
+[submodule "assets/utterances"]
+	path = assets/utterances
+	url = https://github.com/utterance/utterances.git
