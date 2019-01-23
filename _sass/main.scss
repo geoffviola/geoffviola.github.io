@@ -32,7 +32,8 @@ html, body {
 }
 
 p {
-  margin: 1em 0;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 ul.posts {
@@ -67,4 +68,8 @@ ul.posts span {
 .site {
   margin: 2em auto 2em auto;
   width: 42em;
+}
+
+.page {
+  margin-left: 20px;
 }
