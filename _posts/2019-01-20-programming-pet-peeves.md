@@ -27,7 +27,7 @@ Assuming the domain is in [0, 3), the function could be approximated as
 a *= a;
 ```
 
-![piecewise to continuous](/assets/images/piecewise_to_continuous.png "piecewise to continuous"){:width="500px"}
+![piecewise to continuous](/assets/images/piecewise_to_continuous.png "piecewise to continuous"){:width="500"}
 
 The difference in values can be seen in the image above. The approximation is in orange. Assuming the approximation is acceptable, this representation is more maintainable.
 
