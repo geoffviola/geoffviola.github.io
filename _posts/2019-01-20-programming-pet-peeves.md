@@ -9,7 +9,7 @@ There's a lot of ways to implement code. Here a few negative patterns that I've 
 # 1. Branching for Mathematical Functions
 
 ## 1.a. Piece-wise Linear Function for a Continuous Polynomial
-Often times, when a value is a bit off a fudge factor is added. Somtimes, this factor is a polynomial function. Without taking a step back to simplify things, the code may end up being a bunch of if statements. See the example below.
+Often times, when a value is a bit off a fudge factor is added. Sometimes, this factor is a polynomial function. Without taking a step back to simplify things, the code may end up being a bunch of if statements. See the example below.
 
 ```
 if (a>0&&a<0.5) {
@@ -122,7 +122,7 @@ This example is a generality. Due to C++'s lack of reflection, some redundancy m
 
 # 3. Global Mutable State
 
-System calls are expected to change state. For example, receiving network packets, generating a random number, receiving mouse events might change global state. These are necesary for functionality.
+System calls are expected to change state. For example, receiving network packets, generating a random number, receiving mouse events might change global state. These are necessary for functionality.
 
 C++ makes it too easy to write global variables. It is the default behavior of defining a variable outside of a function or class. Python is saner in that it makes the user write global when the variable is used. Some libraries like gflags make it too easy to write globals. See the example below.
 
@@ -220,7 +220,7 @@ This is an art. Breaking down solutions into understandable chunks is important 
 
 # 6. Abstract Classes
 
-Whenever I see an abstract interface, I think [composition over inheritance](https://en.wikipedia.org/wiki/Composition_over_inheritance). There may be legitimate uses of abstract classes, but typically the implementations are better broken out. Reusing code through functions improves readability and testability. See the xample below.
+Whenever I see an abstract interface, I think [composition over inheritance](https://en.wikipedia.org/wiki/Composition_over_inheritance). There may be legitimate uses of abstract classes, but typically the implementations are better broken out. Reusing code through functions improves readability and testability. See the example below.
 
 ```
 class Parent {
