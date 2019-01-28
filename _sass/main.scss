@@ -7,6 +7,23 @@ html, body {
   height: 100%;
 }
 
+table {
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+}
+
+th {
+  border: 1px solid black;
+}
+
+td {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  border: 1px solid black;
+}
+
 .title {
   font-family: "Times New Roman", Times, serif;
   font-size: 200%;
