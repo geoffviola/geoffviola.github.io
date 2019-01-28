@@ -3,7 +3,6 @@ layout: post
 title: Code Searching Keyboard Shortcuts
 ---
 
-# Overview
 Developers should be flexable and creative. Being able to work on any editor is an advantage for a developer who works with other developers on various stacks. When things go well, touch typing on a foreign keyboard in a new interface can look like below.
 
 ![Amadeus Touch Typing](https://i.imgur.com/60G7oBj.gif "Amadeus Touch Typing")
