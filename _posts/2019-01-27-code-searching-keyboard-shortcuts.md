@@ -12,10 +12,12 @@ I often find myself finding files by names and searching for code snippets by st
 | Editor |  Find File | Find Text |
 | --- | --- | --- |
 | Atom (Linux/Windows) | ctrl-p/ctrl-t  | ctrl-shift-f |
-| Atom (Mac) | cmd-p/cmd-t  | cmd-shift-f |
-| Bash | `find . | grep filename` | `grep -R text .` |
+| Atom (Mac) | cmd-p/cmd-t  | cmd-shift-F |
+| Bash | `find . -iname filename` | `grep -R text .` |
 | Bash and Git | `git ls-files | grep filename` | `git grep text` |
 | Clion | ctrl-shift-N | Double Shift |
-| Sublime | ctrl-p  | ctrl-shift-f |
+| Sublime | ctrl-p  | ctrl-shift-F |
 | Vim | `:vs **/*filename` | `:grep -R text .` |
+| Visual Studio Code | ctrl-p | ctrl-shift-F |
 
+I always forget the order of find's arguments and end up doing `find . | grep -i filename`. Also, for finding system files on Unix like systems, mlocate works well. To use it once installed, run `sudo updatedb` to populate the database. Then, `locate filename` searches the whole system quickly.
