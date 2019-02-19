@@ -14,7 +14,7 @@ Use `system_clock` to relate to a time or date for people. It is also useful for
 
 The `now()` method returns a `time_point`. The `time_point` type is templated with the clock's type so that one clock's `time_point` will not interoperate by default with another's. `time_point`'s store the duration from a specified epoch. Note that `system_time` often uses [Unix Time](https://en.wikipedia.org/wiki/Unix_time), but the epoch is unspecified.
 
-## C Compatability
+## C Compatibility
 
 `system_clock` also includes to and from `time_t` methods for C compatibility. Below is a reference table with similar C POSIX calls on [some systems](https://github.com/llvm-mirror/libcxx/blob/master/src/chrono.cpp#L79).
 
@@ -86,15 +86,15 @@ Both integers and floating point types have limitations on the numbers that they
 
 Floating point is more complicated because its resolution is dependent on its mantissa and the operation performed. Large floating point numbers can overwhelm the smaller number. For example, on some platforms `2e8f + 1.0f == 2e8f` is true.
 
-Below is a table comparing the common representations and periods. For integer types, the seconds, days, and years are the time until a tick causes integer overflow. For floating point types, the seconds, days, and years are the time until the precision for a single tick is lost. This table assumes std::numeric_limits<float>::is_iec559 and std::numeric_limits<double>::is_iec559.
+Below is a table comparing the common representations and periods. For integer types, the seconds, days, and years are the time starting from 0 until a tick causes integer overflow. For floating point types, the seconds, days, and years are the time until the precision for a single tick is lost. The bits column represents the part of the representation that effectively stores the ticks. This table assumes std::numeric_limits<float>::is_iec559 and std::numeric_limits<double>::is_iec559. 
 
-Representation | Period | Tick Duration | Seconds | Days | Years
+Representation | Period | Tick Duration | Bits | Seconds | Days | Years
 --- | --- | --- | --- | ---
-int32_t | std::ratio<1, 1000> | milliseconds | 2e6 | 25 | 0.07
-int32_t | std::ratio<1, 1> | seconds | 2e9 | 2e4 | 68
-int64_t | std::ratio<1, 1000000000> | nanoseconds | 9e9 | 1e5 | 292
-float | std:ratio<1, 1> | seconds | 2e7 | 194 | 0.5
-double | std::ratio<1, 1000000000> | nanoseconds | 5e6 | 52 | 0.1
+int32_t | std::ratio<1, 1000>       | milliseconds | 31 | 2e6 | 25  | 0.07
+int32_t | std::ratio<1, 1>          | seconds      | 31 | 2e9 | 2e4 | 68
+int64_t | std::ratio<1, 1000000000> | nanoseconds  | 63 | 9e9 | 1e5 | 292
+float   | std:ratio<1, 1>           | seconds      | 24 | 2e7 | 194 | 0.5
+double  | std::ratio<1, 1000000000> | nanoseconds  | 52 | 5e6 | 52  | 0.1
 
 For certain requirements floating point time representations may be acceptable. [A lot of devices are not designed to be turned on for long periods of time](https://arstechnica.com/information-technology/2015/05/boeing-787-dreamliners-contain-a-potentially-catastrophic-software-bug/). Floating point is easy to use, but is more complicated to account for error. If operations are accumulated, the error may accumulate over time as well. Also, some of the bits in a floating point number may be wasted on unnecessarily large or small number. This waste is common when storing SI units. Chrono makes fixed point arithmetic easier to use. For these reasons, it's best to consider using chrono's integer based durations by default.
 
