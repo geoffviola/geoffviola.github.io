@@ -20,8 +20,8 @@ The `now()` method returns a `time_point`. The `time_point` type is templated wi
 
 Clock | C++ Name | Monotonic | Usually Wall Time | POSIX |
 --- | --- | --- | --- |
-Steady | `std::chrono::steady_clock` | Yes | No | `clock_gettime(CLOCK_MONOTONIC, &tp)` |
-System | `std::chrono::system_clock` | No | Yes | `clock_gettime(CLOCK_REALTIME, &tp)` |
+Steady | `std::chrono::`<br>`steady_clock` | Yes | No | `clock_gettime(`<br>`CLOCK_MONOTONIC,`<br>`&tp)` |
+System | `std::chrono::`<br>`system_clock` | No | Yes | `clock_gettime(`<br>`CLOCK_REALTIME,`<br>`&tp)` |
 
 ## Duration
 
