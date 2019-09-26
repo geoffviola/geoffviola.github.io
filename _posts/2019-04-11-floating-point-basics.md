@@ -55,7 +55,7 @@ I'd recommend a bool or `std::optional` over Nan to signify that a floating poin
 
 # Floating Point Exceptions
 
-Floating point exceptions are meant to catch errors where they occur. C++11 standardized a few functions for setting [environment](https://en.cppreference.com/w/cpp/header/cfenv) bits and viewing them. I prefer GCC's actual exceptions, because it fails at the lines specified. They can be enabled with [feenableexcept](https://linux.die.net/man/3/feenableexcept). On Mac or with clang, it may require implementing it. There is an implementation from [ardupilot](https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Common/missing/fenv.h#L10).
+Floating point exceptions are meant to catch errors where they occur. C++11 standardized a few functions for setting [environment](https://en.cppreference.com/w/cpp/header/cfenv) bits and viewing them, after an error occurs. I prefer GCC's actual exceptions, because it fails at the lines specified. They can be enabled with [feenableexcept](https://linux.die.net/man/3/feenableexcept). On Mac or with clang, it may require implementing it. There is an implementation from [ardupilot](https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Common/missing/fenv.h#L10).
 
 ```
 // FE_INEXACT
