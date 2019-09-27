@@ -81,7 +81,7 @@ Ben Smith
 
 The speaker goes through turning C++ into webassembly. There were some cool demos at the end. One of them did ray tracing. Threads are not currently supported in webassembly.
 
-Compiler explorer uses cppinsights to run programs. Maybe in the future, compiler explorer programs will be runnable in the browser using webassembly.
+Compiler explorer runs programs on its server. Maybe in the future, compiler explorer programs will run in the client's browser using webassembly.
 
 ## Destructor Case Studies: Best Practices for Safe and Efficient Teardown
 Thursday, September 19 • 09:00 - 10:00  
