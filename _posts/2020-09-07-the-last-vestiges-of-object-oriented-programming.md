@@ -178,7 +178,7 @@ Values have certain preconditions before an operation and postconditions after t
 
 For example, we could enforce a value to be within a certain range. Otherwise, we crash and leave a message to the developer. A type like `int8_t` can be anything in [-128, 127]. But we might want to have a class to be sure the value has certain qualities.
 ```
-template <int low, int high, class T>
+template<typename T, T low, T high>
 class BoundedInt {
  public:
   BoundedInt(const T value) {
