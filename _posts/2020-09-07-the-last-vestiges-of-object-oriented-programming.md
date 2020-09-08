@@ -91,6 +91,10 @@ Bicycle2 SpeedUp(const Bicycle2& bike, int increment) {
 }
 ```
 
+In the code above, getting the `Bicycle2` part of `MountainBike2` could be done by using the dot operator. To do the same thing for inheritance, you would need a cast. It's preferred to [avoid casts](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#es48-avoid-casts) even when implicit.
+
+Note that `ApplyBrake` and `SpeedUp` are pure functions in that they no long modify any instances. It's arbitrary that `ApplyBrake` and `SpeedUp` are free functions. If they were `const` member functions,  it would serve the same purpose. If [unified function call syntax](https://brevzin.github.io/c++/2019/04/13/ufcs-history/) becomes part of the standard, the member and function versions could be called the same way.
+
 ## Getters and Setters By Default
 There are some good use cases of getters and setters, but it causes more harm than good when applied indiscriminately. Even boilerplate code can have bugs and needs to read and tested. Some of the confusion was codified with MISRA C++ 2008's [Rule 11-0-1](http://read.pudn.com/downloads669/sourcecode/embedded/2709598/MISRA-Cpp-2008-Unlocked.pdf#page=141) stating that "Member data in non-POD class types shall be private." Luckily, the C++ Core Guidelines recommends something more reasonable: [avoid trivial getters and setters](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#c131-avoid-trivial-getters-and-setters).
 
