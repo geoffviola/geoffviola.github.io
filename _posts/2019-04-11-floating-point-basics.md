@@ -26,7 +26,7 @@ The code above will round a value based on the rounding mode. On clang and x86\_
 
 The code above is intentionally on the edge of what a 32 bit IEC 60559 can represent. On some platforms the result of the addition is just 16777216.
 
-Because of rounding error, the order of operations can effect precision. Therefore, algebra's distributive rule and associative rule needs to be applied with care. It is generally a good practice to operate on high magnitude values separately from low magnitude values [before operating on them together](https://youtu.be/k12BJGSc2Nc?t=1415).
+Because of rounding errors, the order of operations can affect precision. Therefore, algebra's distributive rule and associative rule needs to be applied with care. It is generally a good practice to operate on high magnitude values separately from low magnitude values [before operating on them together](https://youtu.be/k12BJGSc2Nc?t=1415).
 
 # Overflow
 Overflow occurs when an operation goes beyond what the underlying data structure supports [without extraordinary roundoff error](https://web.archive.org/web/20181230041359if_/http://www.open-std.org/jtc1/sc22/wg14/www/abq/c17_updated_proposed_fdis.pdf#page=190). In the case of floating point, this can be done by doing arithmetic past the precision. The value will be `HUGE_VAL` or some variant based on the type.
@@ -51,7 +51,7 @@ Some of the implementation based behavior is configured based on flags. Most com
 
 Reducing the cache footprint can also increase speeds. For example, moving from a double to a float on a large dataset may half memory usage. Cache improvements could have a bigger impact than changing flags.
 
-I'd recommend a bool or `std::optional` over Nan to signify that a floating point value is populated. Nan should be used to signify that its populated to optimize for space. Those cases should be documented well. For example, ROS's [REP 117](http://www.ros.org/reps/rep-0117.html#abstract) uses nan to represent a bad measurement.
+I'd recommend a bool or `std::optional` over Nan to signify that a floating point value is populated. Nan should be used to signify that the value is not populated to optimize for space. Those cases should be documented well. For example, ROS's [REP 117](http://www.ros.org/reps/rep-0117.html#abstract) uses nan to represent a bad measurement.
 
 # Floating Point Exceptions
 
@@ -81,6 +81,6 @@ const bool close = std::fabs(a - b) < 1e-6;
 
 The code above computes a difference between `a` and `b`. Then, it takes an absolute value and compares it to `1e-6`, which is our "epsilon."
 
-Floating point values in a for loop have various issues. At each iteration, the floating point value may accumulate rounding error. When the floating point value accumulates error, the comparison operation may be incorrect. Therefore, it is not recommended to use floating point values in a for loop. Clang analyzer checks for [this issue](https://clang-analyzer.llvm.org/available_checks.html#security_checkers).
+Floating point values in a for loop have various issues. At each iteration, the floating point value may accumulate rounding errors. When the floating point value accumulates error, the comparison operation may be incorrect. Therefore, it is not recommended to use floating point values in a for loop. Clang analyzer checks for [this issue](https://clang-analyzer.llvm.org/available_checks.html#security_checkers).
 
 Since there are so many tricky scenarios, some resort to integer and fixed point representations. For example, the [clipper](http://www.angusj.com/delphi/clipper.php) library uses integers to calculate various polygon operations.

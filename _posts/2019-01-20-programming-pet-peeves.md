@@ -4,12 +4,12 @@ title: Programming Pet Peeves
 ---
 
 # Overview
-There's a lot of ways to implement code. Here a few negative patterns that I've seen or made the mistake of following over the years.
+There are a lot of ways to implement code. Here are a few negative patterns that I've seen or made the mistake of following over the years.
 
 # 1. Branching for Mathematical Functions
 
-## 1.a. Piece-wise Linear Function for a Continuous Polynomial
-Often times, when a value is a bit off a fudge factor is added. Sometimes, this factor is a polynomial function. Without taking a step back to simplify things, the code may end up being a bunch of if statements. See the example below.
+## 1.a. Piecewise Linear Function for a Continuous Polynomial
+Often, when a value is a bit off, a fudge factor is added. Sometimes, this factor is a polynomial function. Without taking a step back to simplify things, the code may end up being a bunch of if statements. See the example below.
 
 ```
 if (a>0&&a<0.5) {
@@ -168,7 +168,7 @@ int main() {
 }
 ```
 
-In the example above, gflags was kept in. Even though the variable is global, the usage is careful only to read from it.
+In the example above, the gflags library was kept in. Even though the variable is global, the usage is careful only to read from it.
 
 For moving data around, mutating global state is very hard to reason about. Unless there are specific performance or functionality reasons, it should be avoided.
 
@@ -195,7 +195,7 @@ class Library {
 };
 ```
 
-The above code, is a naive implementation of std::vector's interfaces. Assuming the "Library" word is really necessary, it would  be better to replace the Library class with a using directive. See below.
+The above code is a naive implementation of std::vector's interfaces. Assuming the "Library" word is really necessary, it would  be better to replace the Library class with a using directive. See below.
 
 ```
 struct Book {
@@ -212,7 +212,7 @@ It's safe to assume that the API user knows the standard collection API. If they
 
 # 5. Large Classes, Functions, or Files
 
-There's a lot of talk about different programming styles. These points are often much less of an issue in comparison to giant classes, functions or files.
+There's a lot of talk about different programming styles. Style is often much less of an issue in comparison to giant classes, functions, or files.
 
 Enforcing a hard limit is probably not the right answer. A good rule of thumb is if the function or method is within an editor window length. For classes and files, a rule of thumb is less than 1000 lines.
 
@@ -263,5 +263,5 @@ Abstract classes used to be used for things like [disabling the copy constructor
 
 # Conclusion
 
-These examples were take from my experience. They are toy problems in isolation, but they appear in code bases all over. It's difficult to write [simple code](https://www.youtube.com/watch?v=n0Ak6xtVXno), but it helps for readability.
+These examples were taken from my experience. They are toy problems in isolation, but they appear in code bases all over. It's difficult to write [simple code](https://www.youtube.com/watch?v=n0Ak6xtVXno), but it helps for readability.
 

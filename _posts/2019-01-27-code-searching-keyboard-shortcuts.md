@@ -7,7 +7,7 @@ Developers should be flexible and creative. Being able to work on any editor is 
 
 ![Amadeus Touch Typing](https://i.imgur.com/60G7oBj.gif "Amadeus Touch Typing")
 
-I often find myself finding files by names and searching for code snippets by strings throughout a folder structure. IDEs do this and more when everything is set up properly. Unfortunately, sometimes it takes longer to setup the project than to do basic text based operations. The following is a table of some common operations in a code base for various code bases.
+I often find myself finding files by names and searching for code snippets by strings throughout a folder structure. IDEs do this and more when everything is set up properly. Unfortunately, sometimes it takes longer to set up the project than to do basic text based operations. The following is a table of some common operations in a code base for various code bases.
 
 | Editor |  Find File | Find Text |
 | --- | --- | --- |

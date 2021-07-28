@@ -1,7 +1,7 @@
 # Poster Session at Reception
 Sunday, September 15 • 20:00 - 22:00
 
-There were two posters that I really liked. The first was one from two software engineers at EPFL’s [blue brain](https://www.epfl.ch/research/domains/bluebrain/) project. It’s a 100+ person research project that simulated parts of the brain based on stimulating a real brain.
+There were two posters that I really liked. The first was one from two software engineers at EPFL’s [blue brain](https://www.epfl.ch/research/domains/bluebrain/) project. It’s a 100+ person research project that simulates parts of the brain based on stimulating a real brain.
 
 The second one that I thought was interesting was from snapchat. They covered a framework for building different filters for mobile platforms. They used Conan. Sometimes they use openBLAS or Eigen depending on what runs faster on what platform. There’s a filter [creator](https://www.snapchat.com/create).
 
@@ -32,7 +32,7 @@ MISRA C++ 2008 is based on the C++98. AUTOSAR targets C++14. AUTOSAR will be fol
 Monday, September 16 • 15:15 - 16:15  
 Nicolai Josuttis
 
-For initialization, [abseil](https://abseil.io/tips/88) recommends to use assignment because it is simpler. Yet, MISRA C++ 2008 recommends braced initialization, because it doesn’t allow narrowing conversions. The speaker points out these contradictions, but it will take more work to resolve them all.
+For initialization, [abseil](https://abseil.io/tips/88) recommends using assignment because it is simpler. Yet, MISRA C++ 2008 recommends braced initialization, because it doesn’t allow narrowing conversions. The speaker points out these contradictions, but it will take more work to resolve them all.
 
 ## Quickly Testing Legacy C++ Code with Approval Tests
 Monday, September 16 • 16:45 - 17:45  
@@ -87,7 +87,7 @@ Compiler explorer runs programs on its server. Maybe in the future, compiler exp
 Thursday, September 19 • 09:00 - 10:00  
 Pete Isensee
 
-This talk covered a fundamental half of RAII. He went over Scott Myers rule of 5. The general guideline to avoid defining destructors seems good. Also, he had a good chart on the order of destruction.
+This talk covered a fundamental half of RAII. He went over the rule of 5, popularized by Scott Meyers. The general guideline to avoid defining destructors seems good. Also, he had a good chart on the order of destruction.
 
 ## Better Code: Relationships
 Thursday, September 19 • 10:30 - 12:00  
@@ -112,7 +112,7 @@ One tool that library writers can use is inline namespaces. Inline namespaces al
 Thursday, September 19 • 15:15 - 15:45  
 Andreas Pasternak
 
-The speaker goes through the steps for certifying parts of the ROS2 middleware. Some new data structure for using dynamic memory from a pool had to be made. Also, some small string data structure were made to put the data on the stack. They achieved 100% unit test coverage for ASIL certification.
+The speaker goes through the steps for certifying parts of the ROS2 middleware. Some new data structure for using dynamic memory from a pool had to be made. Also, a small string data structure were made to put the data on the stack. They achieved 100% unit test coverage for ASIL certification.
 
 ## Behind the Scenes of a C++ Build System
 Thursday, September 19 • 15:50 - 16:20  
@@ -129,7 +129,7 @@ The speaker implements ray tracing three different ways
 * Functional
 * Data oriented
 
-This presentation was an exercise. It illustrated that C++ is a multiparadigm language. The object oriented and functional style were testable. The functional style used the ranges '\|’ operator. The data oriented style was faster, but was harder to test. There was a strange performance issue where he had to compute two calculations and consolidate and if statement for performance. It was related to branch prediction.
+This presentation was an exercise. It illustrated that C++ is a multiparadigm language. The object oriented and functional style were testable. The functional style used the ranges '\|’ operator. The data oriented style was faster, but was harder to test. There was a strange performance issue where he had to compute two calculations and consolidate an if statement for performance. It was related to branch prediction.
 
 ## Lightning Talks
 Thursday, September 19 • 20:30 - 22:00
@@ -140,7 +140,7 @@ I took 5 minutes to present "Detecting Programs That Rely on Undefined Behavior"
 Friday, September 20 • 09:00 - 10:00  
 Kate Gregory
 
-Arguably the hardest thing in programming is naming things. One of the tips are to match certain words together. For example, begin and end are a good pair. Get implies little computation and a const method.
+Arguably the hardest thing in programming is naming things. One of the tips is to match certain words together. For example, begin and end are a good pair. Get implies little computation and a const method.
 
 I’m still thinking about a few recommendations. She pushes for not naming a tuple variable as element1_element2_element3. Without named tuples like python, it can be hard to know where to index the variable. Also, she recommends against using plurals for data structures. Her argument for both of these is to search easier and communicate abstractions that won’t change.
 
@@ -149,7 +149,7 @@ Friday, September 20 • 16:15 - 18:00
 Herb Sutter  
 [CppCon 2019: Herb Sutter “De-fragmenting C++: Making Exceptions and RTTI More Affordable and Usable”](https://www.youtube.com/watch?v=ARYP83yNAWk)
 
-Herb Sutter goes through static exceptions and static reflection, which should come in C++23. Both of these should enable features should be lightweight alternatives to what are commonly excluded features. Static exceptions will have consistent checks to avoid dynamic allocation. Static reflection will allow for fast runtime checks on downcasting.
+Herb Sutter goes through static exceptions and static reflection, which should come in C++23. Both of these should be lightweight alternatives to what are commonly excluded. Static exceptions will have consistent checks to avoid dynamic allocation. Static reflection will allow for fast runtime checks on downcasting.
 
 # Tool Time
 Tuesday, September 17 • 20:30 - 22:00

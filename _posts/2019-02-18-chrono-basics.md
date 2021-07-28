@@ -2,7 +2,7 @@
 
 ## Overview
 
-I see `std::chrono` being rewritten in various projects. It is better to learn and understand its API than constantly learn new time APIs. The library is broken up into clocks which, provide time points, and durations.
+I see `std::chrono` being rewritten in various projects. It is better to learn and understand its API than constantly learn new time APIs. The library is broken up into clocks which provide time points, and durations.
 
 ## Clocks
 
@@ -10,7 +10,7 @@ There are basically two types of clocks: steady and system. `steady_clock` is mo
 
 Use `steady_clock` to measure durations. It is also appropriate for performance analysis on certain operations.
 
-Use `system_clock` to relate to a time or date for people. It is also useful for distributed systems. When using this clock's time, the programmer consider must consider that the time may go backwards.
+Use `system_clock` to relate to a time or date for people. It is also useful for distributed systems. When using this clock's time, the programmer must consider that it may go backwards.
 
 The `now()` method returns a `time_point`. The `time_point` type is templated with the clock's type so that one clock's `time_point` will not interoperate by default with another's. `time_point`'s store the duration from a specified epoch. Note that `system_time` often uses [Unix Time](https://en.wikipedia.org/wiki/Unix_time), but the epoch is unspecified.
 
@@ -96,8 +96,8 @@ int64_t | std::ratio<1, 1000000000> | nanoseconds  | 63 | 9e9 | 1e5 | 292
 float   | std:ratio<1, 1>           | seconds      | 24 | 2e7 | 194 | 0.5
 double  | std::ratio<1, 1000000000> | nanoseconds  | 52 | 5e6 | 52  | 0.1
 
-For certain requirements floating point time representations may be acceptable. [A lot of devices are not designed to be turned on for long periods of time](https://arstechnica.com/information-technology/2015/05/boeing-787-dreamliners-contain-a-potentially-catastrophic-software-bug/). Floating point is easy to use, but is more complicated to account for error. If operations are accumulated, the error may accumulate over time as well. Also, some of the bits in a floating point number may be wasted on unnecessarily large or small number. This waste is common when storing SI units. Chrono makes fixed point arithmetic easier to use. For these reasons, it's best to consider using chrono's integer based durations by default.
+For certain requirements floating point time representations may be acceptable. [A lot of devices are not designed to run for long periods of time](https://arstechnica.com/information-technology/2015/05/boeing-787-dreamliners-contain-a-potentially-catastrophic-software-bug/). Floating point is easy to use, but is more complicated to account for error. If operations are accumulated, the error may accumulate over time as well. Also, some of the bits may go unused if the whole range isn't used. This waste is common when storing SI units. Chrono makes fixed point arithmetic easier to use. For these reasons, it's best to consider using chrono's integer based durations by default.
 
 ## Conclusion
 
-The chrono library follows a lot of good design principles. It clears up a lot of confusion by putting more logic in the type and conversion system. Chrono is not a general purpose units library. It will only handles 0 and 1 exponent units of time. Learning it will lead to good practices.
+The chrono library follows a lot of good design principles. It clears up a lot of confusion by putting more logic in the type and conversion system. Chrono is not a general purpose unit library. It will only handle 0 and 1 exponent units of time. Learning it will lead to good practices.
