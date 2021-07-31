@@ -1,3 +1,5 @@
+@import "normalize.css";
+
 * {
   margin: 0;
   padding: 0;
@@ -98,7 +100,7 @@ ul.posts span {
 
 .site {
   margin: 2em auto 2em auto;
-  width: 42em;
+  max-width: 42em;
 }
 
 .page {
