@@ -89,7 +89,7 @@ One person found an unethical lifehack for getting around rate limits. A salesbo
 
 LLMs favor the programming languages for the Artificial Intelligence (AI) used to generate them as well as easily available languages like javascript. One popular benchmark, [SWE-bench Multilingual](https://www.swebench.com/multilingual.html), evaluated github issue resolution across multiple languages. When Anthropic's Claude 3.7 Sonnet model was evaluated, the model was able to address only 29% of C/C++ issues. Meanwhile, the top language was Rust at 58%.
 
-![SWEBencMultilingual](/assets/images/2025/llms_and_cpp/swe_bench_multilingual.png "A picture of a SWE-Bench Multilingual resolution rate per language.")
+[![SWEBencMultilingual](/assets/images/2025/llms_and_cpp/swe_bench_multilingual.png "A picture of a SWE-Bench Multilingual resolution rate per language.")](https://kabirk.com/_astro/language_resolution.Bog0ZBZR_Z1mBME1.webp)
 
 An Anthropic employee said on CppCast that they concentrate on SWE-bench. They tune their model to 12 Python projects. In addition, the model is trained to recognize XML tags. These tags use angle brackets (e.g. <>). It can look a lot like C++ templates. Despite all that, the performance is OK. [^daisy_hollman_cppcast]
 
