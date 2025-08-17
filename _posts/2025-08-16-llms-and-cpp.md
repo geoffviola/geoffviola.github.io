@@ -73,7 +73,7 @@ Another potential deficiency is a lack of diversity. So when there is a wrong re
 
 The models are generally very verbose. Instead of one word, they'll often write three to five paragraphs. Their tone can often be too obsequious. It feels overly sycophantic. Finally, it can gaslight users. The model sometimes confidently puts forth false information even when it is inconsistent.
 
-![HomerMeme](/assets/images/2025/llms_and_cpp/homer_meme.jpg "A picture of Homer Simpson with his fat folded back so his wife can't see it. The front says unbounded input. The back says incompleteness, inconsistency, high latency, rate limits, limited context, low diversity, too verbose, too obsequious, gaslighting")
+![HomerMeme](/assets/images/2025/llms_and_cpp/homer_meme.jpg "A picture of Homer Simpson with his fat folded back so his wife can't see it. The front says unbounded input. The back says incompleteness, inconsistency, high latency, rate limits, limited context, low diversity, too verbose, too obsequious, gaslighting"){:width="450"}
 
 # Unreliability Workarounds
 
