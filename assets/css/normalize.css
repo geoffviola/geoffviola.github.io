@@ -149,6 +149,15 @@ img {
   border-style: none;
 }
 
+.image-embed {
+  text-align: center;       /* centers inline-block content */
+  margin: 1em auto;         /* matches spacing of other images */
+}
+
+.image-embed .gie-single {
+  display: inline-block;    /* makes the embed behave like an image */
+}
+
 /* Forms
    ========================================================================== */
 
