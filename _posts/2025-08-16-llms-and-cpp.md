@@ -4,6 +4,8 @@ title: LLMs and C++
 
 # Introduction
 
+![ChatGptNonesense](/assets/images/2025/llms_and_cpp/chatgpt_nonsense.png "A picture of a fake conversation with chatGPT. User: Why is code? ChatGPT: No idea, dude")
+
 Large Language Models (LLMs) like ChatGPT have gained popularity particularly in the programming community. It is a new productivity tool. Practices around these tools are evolving.
 
 Most LLMs can facilitate development in C++. Some work better than others. C++ isn't as well supported as other languages.
